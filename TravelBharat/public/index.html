@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore India's destinations state by state with TravelBharat. Discover heritage, nature, religious, adventure and beach destinations.">
+  <meta name="theme-color" content="#123d32">
+  <title>TravelBharat — Explore India State by State</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">T</span><span>Travel<span class="brand-accent">Bharat</span><small>EXPLORE INDIA, STATE BY STATE</small></span></a>
+    <nav><a href="#explore">Explore</a><a href="#states">States & UTs</a><a href="#about">About</a><button class="admin-open" id="adminOpen">Admin ↗</button></nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> YOUR INDIA, WAITING TO BE DISCOVERED</div>
+        <h1>Every journey<br>has a <em>story.</em></h1>
+        <p>From timeless monuments to quiet mountain escapes, discover the places that make India extraordinary.</p>
+        <a class="primary-btn" href="#explore">Explore destinations <span>↘</span></a>
+        <div class="hero-stats"><div><strong id="placeCount">12+</strong><span>Destinations to explore</span></div><i></i><div><strong>28 + 8</strong><span>States & Union Territories</span></div></div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-image"></div><div class="image-label"><span class="label-dot"></span><div><b>India is calling</b><small>Find your next story</small></div><span class="label-arrow">↗</span></div>
+        <div class="sun-stamp">INCREDIBLE<br><b>INDIA</b><span>✳</span></div>
+      </div>
+      <div class="hero-bottom">CULTURE · NATURE · HERITAGE · ADVENTURE <span>SCROLL TO EXPLORE ↓</span></div>
+    </section>
+    <section class="explore section" id="explore">
+      <div class="section-heading"><div><div class="eyebrow">THE JOURNEY STARTS HERE</div><h2>Find your kind of <em>India.</em></h2></div><p>Search a place, choose a region, or follow your curiosity.</p></div>
+      <div class="search-panel">
+        <label class="search-box"><span>⌕</span><input id="searchInput" placeholder="Search destinations, cities or states..." autocomplete="off"><kbd>↵</kbd></label>
+        <label class="filter-select"><span>STATE</span><select id="stateFilter"><option value="">All states & UTs</option></select></label>
+        <label class="filter-select"><span>EXPERIENCE</span><select id="categoryFilter"><option value="">All categories</option><option>Heritage</option><option>Nature</option><option>Religious</option><option>Adventure</option><option>Beach</option><option>Culture</option></select></label>
+        <button class="reset-btn" id="resetFilters" title="Clear filters">↺</button>
+      </div>
+      <div class="category-row" id="categoryChips">
+        <button class="chip active" data-category="">All journeys <span>✳</span></button><button class="chip" data-category="Heritage">⌂ Heritage</button><button class="chip" data-category="Nature">♧ Nature</button><button class="chip" data-category="Religious">✧ Spiritual</button><button class="chip" data-category="Adventure">↗ Adventure</button><button class="chip" data-category="Beach">≈ Beaches</button>
+      </div>
+      <div class="results-meta"><span id="resultsCount">Loading destinations…</span><span>CURATED FOR THE CURIOUS</span></div>
+      <div class="destination-grid" id="destinationGrid"><div class="loading">Loading your next adventure…</div></div>
+      <div class="empty-state hidden" id="emptyState"><div>⌕</div><h3>No destinations found</h3><p>Try a different search or clear the filters.</p><button class="primary-btn" id="clearEmpty">Clear filters ↗</button></div>
+    </section>
+    <section class="states-section" id="states">
+      <div class="section-heading light-heading"><div><div class="eyebrow">ONE COUNTRY, MANY WORLDS</div><h2>Explore by <em>region.</em></h2></div><p>Each state has its own rhythm, flavours, landscapes and stories.</p></div>
+      <div class="state-list" id="stateList"></div>
+    </section>
+    <section class="quote-section" id="about"><div class="quote-symbol">“</div><blockquote>Travel is not just about the places you see.<br>It is about the stories you bring home.</blockquote><p>TRAVELBHARAT · A DIGITAL TRAVEL ENCYCLOPEDIA</p></section>
+  </main>
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">T</span><span>Travel<span class="brand-accent">Bharat</span><small>EXPLORE INDIA, STATE BY STATE</small></span></a><span>Made for curious minds, travellers & storytellers.</span><span>© <span id="year"></span> TravelBharat</span></footer>
+
+  <div class="modal-backdrop hidden" id="detailModal"><article class="detail-modal"><button class="modal-close" data-close="detailModal">×</button><div id="detailContent"></div></article></div>
+  <div class="modal-backdrop hidden" id="adminModal"><article class="admin-modal"><button class="modal-close" data-close="adminModal">×</button><div id="adminContent"></div></article></div>
+  <div class="toast" id="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
